@@ -5,6 +5,7 @@
 #include <iostream>
 
 
+
 class Application
 {
 private:
@@ -14,7 +15,7 @@ private:
 
 
 public:
-	Application(bool& success,unsigned int window_width = 1024,unsigned int window_height = 720,const char* title = "OpenGL Application");
+	Application(unsigned int window_width = 1024,unsigned int window_height = 720,const char* title = "OpenGL Application");
 
 	void Run();
 

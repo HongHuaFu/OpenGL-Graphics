@@ -18,9 +18,6 @@
     <ClCompile Include="Main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="third-party\glad\glad.c">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="third-party\imgui\imgui.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -40,6 +37,24 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="engine\Application.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Mesh.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Model.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="third-party\glad.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="third-party\compile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Camera.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,5 +86,30 @@
     <ClInclude Include="engine\Application.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="engine\Shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Mesh.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Model.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third-party\stb_image.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="third-party\tiny_obj_loader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Camera.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\l.vs" />
+    <None Include="shaders\l.fs" />
   </ItemGroup>
 </Project>
