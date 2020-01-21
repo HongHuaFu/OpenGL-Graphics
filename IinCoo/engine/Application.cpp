@@ -63,7 +63,7 @@ void Application::Run()
 	glEnable(GL_DEPTH_TEST);
 	Shader ourShader("./shaders/l.vs","./shaders/l.fs");
 
-	Model ourModel("./resources/nanosuit/nanosuit.obj");
+	Model ourModel("./resources/robot/robot.obj");
 	
 	while (!glfwWindowShouldClose(mWindow))
 	{
