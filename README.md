@@ -2,6 +2,6 @@
 
 ![image](screenshot/01-ModelLoader.png)
 
-### [02 - Stencil Outline]()
+### [02 - Stencil Outline](https://github.com/mxiZatoki/OpenGL-Graphics/tree/77181c92fb0b56355a1eb9aa65524a5adba7b526)
 
-![image](http://github.com/mxiZatoki/OpenGL-Graphics/raw/master/screenshot/02-StencilOutline.jpg)
+![image](screenshot/02-StencilOutline.png)
