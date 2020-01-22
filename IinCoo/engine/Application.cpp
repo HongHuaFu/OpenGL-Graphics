@@ -61,9 +61,17 @@ Application::Application(unsigned int window_width,unsigned int window_height,co
 void Application::Run()
 {
 	glEnable(GL_DEPTH_TEST);
-	Shader ourShader("./shaders/l.vs","./shaders/l.fs");
+	glDepthFunc(GL_LESS);
+	glEnable(GL_STENCIL_TEST);//开启模板测试
+	glStencilFunc(GL_NOTEQUAL,1,0xFF);
+	glStencilOp(GL_KEEP, GL_KEEP, GL_REPLACE);//在模板测试和深度测试都通过时替换像素
 
-	Model ourModel("./resources/robot/robot.obj");
+	Shader diffuseShader("./shaders/l.vs","./shaders/l.fs");
+	Shader shellShader("./shaders/shell.vs","./shaders/shell.fs");
+	Model robot("./resources/robot/robot.obj");
+	Model floor("./resources/floor/floor.obj");
+	
+	
 	
 	while (!glfwWindowShouldClose(mWindow))
 	{
@@ -73,23 +81,51 @@ void Application::Run()
 
 		ProcessInput(mWindow);
 
+		
 
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT| GL_STENCIL_BUFFER_BIT);
 
-		ourShader.Use();
+		diffuseShader.Use();
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)mWindowWidth / (float)mWindowHeight, 0.1f, 100.0f);
 		glm::mat4 view = camera.GetViewMatrix();
-		ourShader.SetMat4("projection", projection);
-		ourShader.SetMat4("view", view);
+		diffuseShader.SetMat4("projection", projection);
+		diffuseShader.SetMat4("view", view);
 
 		// render the loaded model
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0.0f, -1.75f, 0.0f));
 		model = glm::scale(model, glm::vec3(0.2f, 0.2f, 0.2f));
-		ourShader.SetMat4("model", model);
-		ourModel.Draw(ourShader);
 
+		auto floorModel = glm::scale(model, glm::vec3(50.0f, 50.0f, 50.0f));
+		diffuseShader.SetMat4("model", floorModel);
+		glStencilMask(0x00);
+		floor.Draw(diffuseShader);
+		diffuseShader.SetMat4("model", model);
+		shellShader.Use();
+		shellShader.SetMat4("projection", projection);
+		shellShader.SetMat4("view", view);
+		
+
+		diffuseShader.Use();
+
+		glStencilFunc(GL_ALWAYS, 1, 0xFF);
+		glStencilMask(0xFF); //开启模板缓存写入
+		robot.Draw(diffuseShader);
+		float scale = 1.03f;
+		float offset = -0.3f;
+		glStencilFunc(GL_NOTEQUAL, 1, 0xFF);//未绘制区域描线
+		glStencilMask(0x00);//关闭模板写入
+		glDisable(GL_DEPTH_TEST);
+		
+		shellShader.Use();
+		model = glm::translate(model, glm::vec3(offset, offset, offset));
+		model = glm::scale(model, glm::vec3(scale, scale, scale));
+		shellShader.SetMat4("model", model);
+		robot.Draw(shellShader);
+		glStencilMask(0xFF);
+		glEnable(GL_DEPTH_TEST);
+		
 		glfwSwapBuffers(mWindow);
 		glfwPollEvents();
 	}

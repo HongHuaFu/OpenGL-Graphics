@@ -2,3 +2,6 @@
 
 ![image](http://github.com/mxiZatoki/OpenGL-Graphics/raw/master/screenshot/01-ModelLoader.png)
 
+### [02 - Stencil Outline]()
+
+![image](http://github.com/mxiZatoki/OpenGL-Graphics/raw/master/screenshot/02-StencilOutline.jpg)

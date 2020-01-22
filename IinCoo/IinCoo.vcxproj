@@ -179,11 +179,7 @@
     <ClInclude Include="third-party\tiny_obj_loader.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="TODO.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="shaders\l.fs" />
-    <None Include="shaders\l.vs" />
+    <Image Include="resources\robot\diffuse.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
