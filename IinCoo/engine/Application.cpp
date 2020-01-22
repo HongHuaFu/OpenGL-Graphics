@@ -2,6 +2,7 @@
 #include "Shader.h"
 #include "Model.h"
 #include "Camera.h"
+#include "Skybox.h"
 
 
 float lastX = 0.0f;
@@ -70,7 +71,7 @@ void Application::Run()
 	Shader shellShader("./shaders/shell.vs","./shaders/shell.fs");
 	Model robot("./resources/robot/robot.obj");
 	Model floor("./resources/floor/floor.obj");
-	
+	Skybox skybox("./resources/skybox/ml_env/");
 	
 	
 	while (!glfwWindowShouldClose(mWindow))
@@ -116,7 +117,10 @@ void Application::Run()
 		float offset = -0.3f;
 		glStencilFunc(GL_NOTEQUAL, 1, 0xFF);//未绘制区域描线
 		glStencilMask(0x00);//关闭模板写入
-		glDisable(GL_DEPTH_TEST);
+
+		//glDisable(GL_DEPTH_TEST);
+		glDepthMask(GL_TRUE);
+		
 		
 		shellShader.Use();
 		model = glm::translate(model, glm::vec3(offset, offset, offset));
@@ -125,6 +129,8 @@ void Application::Run()
 		robot.Draw(shellShader);
 		glStencilMask(0xFF);
 		glEnable(GL_DEPTH_TEST);
+
+		skybox.Draw(view,projection);
 		
 		glfwSwapBuffers(mWindow);
 		glfwPollEvents();

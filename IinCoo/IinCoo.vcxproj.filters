@@ -57,6 +57,12 @@
     <ClCompile Include="engine\Camera.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="engine\Skybox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="third-party\imgui\imconfig.h">
@@ -104,10 +110,11 @@
     <ClInclude Include="engine\Camera.h">
       <Filter>头文件</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\robot\diffuse.jpg">
-      <Filter>资源文件</Filter>
-    </Image>
+    <ClInclude Include="engine\Skybox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

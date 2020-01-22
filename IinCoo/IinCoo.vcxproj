@@ -151,6 +151,8 @@
     <ClCompile Include="engine\Shader.cpp" />
     <ClCompile Include="engine\Mesh.cpp" />
     <ClCompile Include="engine\Model.cpp" />
+    <ClCompile Include="engine\Skybox.cpp" />
+    <ClCompile Include="engine\Texture.cpp" />
     <ClCompile Include="third-party\glad.c" />
     <ClCompile Include="third-party\imgui\imgui.cpp" />
     <ClCompile Include="third-party\imgui\imgui_demo.cpp" />
@@ -167,6 +169,8 @@
     <ClInclude Include="engine\Shader.h" />
     <ClInclude Include="engine\Mesh.h" />
     <ClInclude Include="engine\Model.h" />
+    <ClInclude Include="engine\Skybox.h" />
+    <ClInclude Include="engine\Texture.h" />
     <ClInclude Include="third-party\imgui\imconfig.h" />
     <ClInclude Include="third-party\imgui\imgui.h" />
     <ClInclude Include="third-party\imgui\imgui_impl_glfw.h" />
@@ -177,9 +181,6 @@
     <ClInclude Include="third-party\imgui\imstb_truetype.h" />
     <ClInclude Include="third-party\stb_image.h" />
     <ClInclude Include="third-party\tiny_obj_loader.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="resources\robot\diffuse.jpg" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
