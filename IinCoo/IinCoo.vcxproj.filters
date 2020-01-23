@@ -116,5 +116,17 @@
     <ClInclude Include="engine\Texture.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="demos\Test_01_SkyBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="demos\api.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="demos\Test.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="demos\Test_02_ShadowMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

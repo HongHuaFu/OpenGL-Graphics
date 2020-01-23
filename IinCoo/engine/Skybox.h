@@ -8,6 +8,7 @@
 class Skybox
 {
 public:
+	Skybox(){ }
 	Skybox(const char* path);
 	~Skybox();
 

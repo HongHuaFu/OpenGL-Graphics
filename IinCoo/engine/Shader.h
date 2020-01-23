@@ -83,6 +83,6 @@ public://set value
 
 private:
 	void checkCompileErrors(GLuint shader, std::string type);
-	
+	const char* pathPrint;
 };
 

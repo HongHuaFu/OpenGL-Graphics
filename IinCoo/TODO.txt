@@ -3,3 +3,13 @@ Model.cpp
 	Func:LoadModel 
 		TODO: 计算切线
 			  计算副切线
+
+// shadow
+// pbr
+// bloom
+// deferred lighting
+// ssao
+// 3D click
+// forward plus shading
+// ocean
+// cloud

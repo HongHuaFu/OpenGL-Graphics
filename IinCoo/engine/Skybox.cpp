@@ -15,7 +15,7 @@ Skybox::Skybox(const char* path)
 		foldPath + "back.jpg"
 	};
     cubemapTexture = (TextureFuncs::LoadCubemap(texturesPath));
-	skyboxShader = Shader("./shaders/skybox.vs","./shaders/skybox.fs");
+	skyboxShader = Shader("../resources/shaders/skybox.vs","../resources/shaders/skybox.fs");
 
 	float skyboxVertices[] = {
 		// positions          

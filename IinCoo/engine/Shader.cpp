@@ -2,6 +2,7 @@
 
 Shader::Shader(const char* vertexPath,const char* fragmentPath,const char* geometryPath)
 {
+	pathPrint = vertexPath;
 	std::string vertexCode;
 	std::string fragmentCode;
 	std::string geometryCode;
@@ -92,7 +93,7 @@ void Shader::checkCompileErrors(GLuint shader,std::string type)
 		if(!success)
 		{
 			glGetShaderInfoLog(shader, 1024, NULL, infoLog);
-			std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+			std::cout <<pathPrint<< "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
 		}
 	}
 	else
@@ -101,7 +102,7 @@ void Shader::checkCompileErrors(GLuint shader,std::string type)
 		if(!success)
 		{
 			glGetProgramInfoLog(shader, 1024, NULL, infoLog);
-			std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+			std::cout <<pathPrint<<  "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
 		}
 	}
 }

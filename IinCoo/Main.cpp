@@ -1,8 +1,8 @@
-#include "engine/Application.h"
+#include "demos/Test.h"
 
 int main()
 {
-	Application app = Application();
-	app.Run();
+	Test_02_ShadowMap demo = Test_02_ShadowMap();
+	demo.Run();
 }
 

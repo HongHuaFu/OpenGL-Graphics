@@ -26,6 +26,7 @@ public:
 	std::string directory;
 	bool gammaCorrect;
 
+	Model(){ }
 	Model(std::string const &path,bool gamma = false) : gammaCorrect(gamma)
 	{
 		LoadModel(path);

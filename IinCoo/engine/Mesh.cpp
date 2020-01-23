@@ -22,7 +22,7 @@ void Mesh::DrawMesh(Shader shader)
 	unsigned int heightNr   = 1;
 	for(unsigned int i = 0; i < textures.size(); i++)
 	{
-		glActiveTexture(GL_TEXTURE0 + i); 
+		
 										 
 		std::string number;
 		std::string name = textures[i].type;
@@ -36,8 +36,9 @@ void Mesh::DrawMesh(Shader shader)
 			number = std::to_string(heightNr++); 
 
 												 
-		glUniform1i(glGetUniformLocation(shader.ID, (name + number).c_str()), i);
+		glUniform1i(glGetUniformLocation(shader.ID, (name + number).c_str()), 10+i);
 		// and finally bind the texture
+		glActiveTexture(GL_TEXTURE10 + i); 
 		glBindTexture(GL_TEXTURE_2D, textures[i].id);
 	}
 
@@ -50,6 +51,7 @@ void Mesh::DrawMesh(Shader shader)
 
 
 //绑定到VAO
+//注意前四的shader 为normal，texcoord，tangent，bitangent
 void Mesh::BuildMesh()
 {
 	glGenVertexArrays(1,&VAO);

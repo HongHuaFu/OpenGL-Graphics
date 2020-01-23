@@ -164,6 +164,10 @@
     <ClCompile Include="third-party\compile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="demos\api.h" />
+    <ClInclude Include="demos\Test.h" />
+    <ClInclude Include="demos\Test_01_SkyBox.h" />
+    <ClInclude Include="demos\Test_02_ShadowMap.h" />
     <ClInclude Include="engine\Camera.h" />
     <ClInclude Include="engine\Application.h" />
     <ClInclude Include="engine\Shader.h" />
