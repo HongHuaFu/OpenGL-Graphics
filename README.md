@@ -16,4 +16,4 @@
 
 ### [05 - ShadowMapping]()
 
-![image](screenshot/05-Shadowmaping.png)
+![image](screenshot/05-ShadowMaping.png)
