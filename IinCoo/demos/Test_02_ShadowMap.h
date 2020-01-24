@@ -2,6 +2,8 @@
 #include "api.h"
 
 
+
+
 //直射光，shadowMap
 class Test_02_ShadowMap : public Application
 {
@@ -11,6 +13,11 @@ public:
 
 	virtual void SenceInit() override
 	{
+
+
+
+
+
 		skybox = Skybox("../resources/skyboxs/gn_env/");
 		floor = Model("../resources/models/floor/floor.obj");
 		robot = Model("../resources/models/robot/robot.obj");
@@ -49,8 +56,14 @@ public:
 
 	virtual void DrawLoop(Camera camera) override
 	{
-		lightPos.x =  5.0f * sin(gamelastframe );
-		lightPos.z =  5.0f * cos(gamelastframe);
+
+
+		float aa =  sqrt(1.0f - LightPosY*LightPosY);
+		lightPos.x = aa* sin(gamelastframe);
+		lightPos.z = aa *cos(gamelastframe);
+		lightPos.y = LightPosY;
+
+
 		glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
 
 		
@@ -59,10 +72,12 @@ public:
 		glm::mat4 projection = glm::perspective(glm::radians(camera.Zoom), (float)mWindowWidth/(float)mWindowHeight,0.1f, 100.0f);
 		glm::mat4 view = camera.GetViewMatrix();
 
+		glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
 		glm::mat4 lightProjection, lightView;
 		glm::mat4 lightSpaceMatrix;
 		GLfloat near_plane = 0.1f, far_plane = 10.0f;
 		lightProjection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, near_plane, far_plane);
+
 		lightView = glm::lookAt(lightPos, glm::vec3(0.0f), glm::vec3(0.0, 1.0, 0.0));
 		lightSpaceMatrix = lightProjection * lightView;
 		// - now render scene from light's point of view
@@ -70,7 +85,7 @@ public:
 		depthshader.SetMat4("lightSpaceMatrix", lightSpaceMatrix);
 	
 		glCullFace(GL_FRONT);
-		glViewport(0, 0, SHADOW_WIDTH, SHADOW_HEIGHT);
+		
 		glBindFramebuffer(GL_FRAMEBUFFER, depthMapFBO); //绑定FBO
 			glClear(GL_DEPTH_BUFFER_BIT);
 			RenderSence(depthshader); //渲染到FBO
@@ -88,7 +103,7 @@ public:
 		modelshader.SetVec3("lightPos", lightPos);
 		modelshader.SetMat4("lightSpaceMatrix", lightSpaceMatrix);
 
-
+		//从10开始的贴图槽被占用了
 		modelshader.SetInt("shadowMap", 0);//绑定贴图
 		glActiveTexture(GL_TEXTURE0);
 		
@@ -96,7 +111,7 @@ public:
 		RenderSence(modelshader);
 
 		debugshader.Use();
-		//debugshader.SetInt("depthMap", 0);
+		debugshader.SetInt("depthMap", 0);
 		debugshader.SetFloat("near_plane", near_plane);
 		debugshader.SetFloat("far_plane", far_plane);
 		glActiveTexture(GL_TEXTURE0);
@@ -107,7 +122,18 @@ public:
 
 	}
 
+	virtual void ImguiFunc() override
+	{
+		ImGui::Begin("LightPos Y");
+		ImGui::Text("Press E to open/close mouse catch.");
+		ImGui::SliderFloat("float", &LightPosY, 0.01f, 0.99f);
+		ImGui::Text("LightPos Y = %f", LightPosY);
+		ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+		ImGui::End();
+	}
+
 private:
+	float LightPosY = sqrt(2.0f)/2.0f;
 	void RenderSence(Shader mshader)
 	{
 		mshader.Use();
@@ -127,7 +153,7 @@ private:
 	glm::vec3 lightPos; //直射光位置
 	Model floor;
 	Model robot;
-	const GLuint SHADOW_WIDTH = 1024, SHADOW_HEIGHT = 1024;//阴影贴图大小
+	const GLuint SHADOW_WIDTH = 2048, SHADOW_HEIGHT = 2048;//阴影贴图大小
 	Shader modelshader;
 	Shader depthshader;
 	Shader debugshader;
@@ -136,6 +162,7 @@ private:
 
 	unsigned int quadVAO = 0;
 	unsigned int quadVBO;
+
 	void renderQuad()
 	{
 		if (quadVAO == 0)

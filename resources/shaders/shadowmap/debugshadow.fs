@@ -7,7 +7,7 @@ uniform sampler2D depthMap;
 uniform float near_plane;
 uniform float far_plane;
 
-// required when using a perspective projection matrix
+//使用透视投影矩阵，对应聚光灯，要求z深度转换为线性
 float LinearizeDepth(float depth)
 {
     float z = depth * 2.0 - 1.0; // Back to NDC 
@@ -17,6 +17,7 @@ float LinearizeDepth(float depth)
 void main()
 {             
     float depthValue = texture(depthMap, TexCoords).r;
-    // FragColor = vec4(vec3(LinearizeDepth(depthValue) / far_plane), 1.0); // perspective
-    FragColor = vec4(vec3(depthValue), 1.0); // orthographic
+
+    // FragColor = vec4(vec3(LinearizeDepth(depthValue) / far_plane), 1.0); //透视投影
+    FragColor = vec4(vec3(depthValue), 1.0); // 正交投影
 }

@@ -17,20 +17,24 @@ uniform vec3 viewPos;
 
 float ShadowCalculation(vec4 fragPosLightSpace)
 {
-    // perform perspective divide
+    // 透视除法
     vec3 projCoords = fragPosLightSpace.xyz / fragPosLightSpace.w;
-    // transform to [0,1] range
+
+    // 转化为0-1
     projCoords = projCoords * 0.5 + 0.5;
-    // get closest depth value from light's perspective (using [0,1] range fragPosLight as coords)
+
+    // 获取最近的深度值
     float closestDepth = texture(shadowMap, projCoords.xy).r; 
-    // get depth of current fragment from light's perspective
+
+    // 当前深度
     float currentDepth = projCoords.z;
-    // calculate bias (based on depth map resolution and slope)
+
+
+    // 计算阴影采样偏移值
     vec3 normal = normalize(fs_in.Normal);
     vec3 lightDir = normalize(lightPos - fs_in.FragPos);
     float bias = max(0.05 * (1.0 - dot(normal, lightDir)), 0.005);
-    // check whether current frag pos is in shadow
-    // float shadow = currentDepth - bias > closestDepth  ? 1.0 : 0.0;
+
     // PCF
     float shadow = 0.0;
     vec2 texelSize = 1.0 / textureSize(shadowMap, 0);
@@ -38,13 +42,14 @@ float ShadowCalculation(vec4 fragPosLightSpace)
     {
         for(int y = -1; y <= 1; ++y)
         {
+            
             float pcfDepth = texture(shadowMap, projCoords.xy + vec2(x, y) * texelSize).r; 
             shadow += currentDepth - bias > pcfDepth  ? 1.0 : 0.0;        
         }    
     }
     shadow /= 9.0;
     
-    // keep the shadow at 0.0 when outside the far_plane region of the light's frustum.
+    //视锥体外的设为没有影子 
     if(projCoords.z > 1.0)
         shadow = 0.0;
         
@@ -69,6 +74,7 @@ void main()
     vec3 halfwayDir = normalize(lightDir + viewDir);  
     spec = pow(max(dot(normal, halfwayDir), 0.0), 64.0);
     vec3 specular = spec * lightColor;    
+    
     // calculate shadow
     float shadow = ShadowCalculation(fs_in.FragPosLightSpace);                      
     vec3 lighting = (ambient + (1.0 - shadow) * (diffuse + specular)) * color;    

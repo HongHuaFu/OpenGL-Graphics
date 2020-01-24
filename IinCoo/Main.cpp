@@ -2,7 +2,8 @@
 
 int main()
 {
-	Test_02_ShadowMap demo = Test_02_ShadowMap();
-	demo.Run();
+	//Test_01_SkyBox demo_01 = Test_01_SkyBox();
+	Test_02_ShadowMap demo_02 = Test_02_ShadowMap();
+	demo_02.Run();
 }
 

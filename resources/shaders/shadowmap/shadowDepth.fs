@@ -2,6 +2,6 @@
 
 void main()
 {
-        //自动写入
-    //gl_Position = lightSpaceMatrix * model * vec4(position, 1.0f);
+    //自动写入
+    gl_FragDepth = gl_FragCoord.z;
 }
