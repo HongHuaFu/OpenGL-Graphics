@@ -26,7 +26,8 @@ public://set value
 
 	inline void SetBool(const std::string &name, bool value) const{ glUniform1i(glGetUniformLocation(ID, name.c_str()), (int)value); }
 
-	inline void SetInt(const std::string &name, int value) const { glUniform1f(glGetUniformLocation(ID, name.c_str()), value);  }
+	//恶心到我了。。干，弄错 f与 i了 fuckkkkkkkkkkkkkkkkk
+	inline void SetInt(const std::string &name, int value) const { glUniform1i(glGetUniformLocation(ID, name.c_str()), value);  }
 
 	inline void SetFloat(const std::string &name, float value) const
 	{ 

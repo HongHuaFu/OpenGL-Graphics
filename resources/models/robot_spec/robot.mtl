@@ -1,0 +1,16 @@
+newmtl initialShadingGroup
+illum 4
+Kd 0.50 0.50 0.50
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+Ni 1.00
+newmtl phong1SG
+illum 4
+Kd 0.00 0.00 0.00
+Ka 0.00 0.00 0.00
+Tf 1.00 1.00 1.00
+map_Kd Texture_1K.jpg
+Ni 1.00
+Ks 0.00 0.00 0.00
+map_Ks 98a91fc2e52c4db6a4be147a471e98ca.jpeg
+Ns 18.00

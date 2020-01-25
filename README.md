@@ -17,3 +17,8 @@
 ### [05 - ShadowMapping]()
 
 ![image](screenshot/05-ShadowMaping.png)
+
+### [06 - Deferred Shading]()
+
+![image](screenshot/06-deferredshading.gif)
+

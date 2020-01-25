@@ -128,5 +128,8 @@
     <ClInclude Include="demos\Test_02_ShadowMap.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="demos\Test_03_DefferedShading.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

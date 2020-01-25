@@ -185,10 +185,6 @@ void Application::KeyCallBack(GLFWwindow * window,int key,int scancode,int actio
 
 void Application::ProcessInput(GLFWwindow* window)
 {
-	
-
-	
-	
 
 	if(iscatch)
 	{

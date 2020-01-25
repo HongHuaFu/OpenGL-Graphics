@@ -13,11 +13,6 @@ public:
 
 	virtual void SenceInit() override
 	{
-
-
-
-
-
 		skybox = Skybox("../resources/skyboxs/gn_env/");
 		floor = Model("../resources/models/floor/floor.obj");
 		robot = Model("../resources/models/robot/robot.obj");
@@ -56,8 +51,6 @@ public:
 
 	virtual void DrawLoop(Camera camera) override
 	{
-
-
 		float aa =  sqrt(1.0f - LightPosY*LightPosY);
 		lightPos.x = aa* sin(gamelastframe);
 		lightPos.z = aa *cos(gamelastframe);

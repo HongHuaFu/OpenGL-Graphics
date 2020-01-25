@@ -1,9 +1,3 @@
-==========2020/1/20
-Model.cpp  
-	Func:LoadModel 
-		TODO: 计算切线
-			  计算副切线
-
 // shadow
 // pbr
 // bloom
@@ -13,3 +7,17 @@ Model.cpp
 // forward plus shading
 // ocean
 // cloud
+
+==========2020/1/24
+淦，deferred shading 一片黑不一定是你出错了，可能是灯光太弱了，把光源调大。
+白白调试了那么久。
+
+==========2020/1/23
+shadow mapping 注意视锥体剔除，保存光源模长为一。
+
+==========2020/1/20
+Model.cpp  
+	Func:LoadModel 
+		TODO: 计算切线
+			  计算副切线
+
