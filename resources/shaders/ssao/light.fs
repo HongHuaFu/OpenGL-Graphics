@@ -29,6 +29,7 @@ void main()
     vec3 ambient = vec3(0.3 * Diffuse * AmbientOcclusion);
     vec3 lighting  = ambient; 
     vec3 viewDir  = normalize(-FragPos); //相机空间下，相机的位置是原点
+    
     // diffuse
     vec3 lightDir = normalize(light.Position - FragPos);
     vec3 diffuse = max(dot(Normal, lightDir), 0.0) * Diffuse * light.Color;

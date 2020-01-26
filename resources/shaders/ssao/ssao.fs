@@ -37,20 +37,18 @@ void main()
     float occlusion = 0.0;
     for(int i = 0; i < kernelSize; ++i)
     {
-        // get sample position
-        vec3 sample = TBN * samples[i]; // from tangent to view-space
+        vec3 sample = TBN * samples[i];
         sample = fragPos + sample * radius; 
         
-        // project sample position (to sample texture) (to get position on screen/texture)
         vec4 offset = vec4(sample, 1.0);
-        offset = projection * offset; // from view to clip-space
-        offset.xyz /= offset.w; // perspective divide
-        offset.xyz = offset.xyz * 0.5 + 0.5; // transform to range 0.0 - 1.0
+        offset = projection * offset; // 转为裁剪坐标系下
+        offset.xyz /= offset.w; // 透视除法
+        offset.xyz = offset.xyz * 0.5 + 0.5; 
         
-        // get sample depth
-        float sampleDepth = texture(gPosition, offset.xy).z; // get depth value of kernel sample
+     
+        float sampleDepth = texture(gPosition, offset.xy).z; // 获取采样深度值
         
-        // range check & accumulate
+        //边缘检测
         float rangeCheck = smoothstep(0.0, 1.0, radius / abs(fragPos.z - sampleDepth));
         occlusion += (sampleDepth >= sample.z + bias ? 1.0 : 0.0) * rangeCheck;           
     }
