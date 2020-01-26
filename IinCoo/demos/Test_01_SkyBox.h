@@ -21,12 +21,14 @@ public:
 		glm::mat4 view = camera.GetViewMatrix();
 		skybox.Draw(view,projection);
 	}
+
 	virtual void ImguiFunc() override
 	{
 
 	}
 
 private:
+
 	Skybox skybox;
 };
 

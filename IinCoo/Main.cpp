@@ -1,5 +1,5 @@
 #include "demos/Test.h"
-#define Test_03
+#define Test_04
 
 int main()
 {
@@ -17,6 +17,11 @@ int main()
 	Test_03_DefferedShading demo = Test_03_DefferedShading();
 	demo.Run();
 #endif // Test_03
+
+#ifdef Test_04
+	Test_04_SSAO demo = Test_04_SSAO();
+	demo.Run();
+#endif // Test_04
 
 }
 

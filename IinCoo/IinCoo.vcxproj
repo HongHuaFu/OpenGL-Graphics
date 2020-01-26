@@ -148,6 +148,9 @@
   <ItemGroup>
     <ClCompile Include="engine\Camera.cpp" />
     <ClCompile Include="engine\Application.cpp" />
+    <ClCompile Include="engine\FrameBuffer.cpp" />
+    <ClCompile Include="engine\Geometry.cpp" />
+    <ClCompile Include="engine\PostEffect.cpp" />
     <ClCompile Include="engine\Shader.cpp" />
     <ClCompile Include="engine\Mesh.cpp" />
     <ClCompile Include="engine\Model.cpp" />
@@ -169,8 +172,14 @@
     <ClInclude Include="demos\Test_01_SkyBox.h" />
     <ClInclude Include="demos\Test_02_ShadowMap.h" />
     <ClInclude Include="demos\Test_03_DefferedShading.h" />
+    <ClInclude Include="demos\Test_04_SSAO.h" />
+    <ClInclude Include="demos\Test_05_Bloom.h" />
     <ClInclude Include="engine\Camera.h" />
     <ClInclude Include="engine\Application.h" />
+    <ClInclude Include="engine\FrameBuffer.h" />
+    <ClInclude Include="engine\Geometry.h" />
+    <ClInclude Include="engine\MathHelper.h" />
+    <ClInclude Include="engine\PostEffect.h" />
     <ClInclude Include="engine\Shader.h" />
     <ClInclude Include="engine\Mesh.h" />
     <ClInclude Include="engine\Model.h" />

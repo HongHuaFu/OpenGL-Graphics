@@ -92,6 +92,7 @@ void Application::Run()
 		gamelastframe = lastFrame;
 		ProcessInput(mWindow);
 
+		glViewport(0.0f,0.0f,mWindowWidth,mWindowHeight);
 		DrawLoop(camera);
 
 

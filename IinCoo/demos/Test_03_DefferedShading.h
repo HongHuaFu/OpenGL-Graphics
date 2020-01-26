@@ -179,8 +179,8 @@ public:
 			ppos.z =lightPositions[i].z +  0.3f*cos(gamelastframe * cos(i*14.9874 + 1.32421));
 			shaderLightingPassShader.SetVec3("lights[" + std::to_string(i) + "].Position", ppos);
 			shaderLightingPassShader.SetVec3("lights[" + std::to_string(i) + "].Color", lightColors[i]);
-			// update attenuation parameters and calculate radius
-			const float constant = 1.0; // note that we don't send this to the shader, we assume it is always 1.0 (in our case)
+
+			const float constant = 1.0; 
 			const float linear = 0.7;
 			const float quadratic = 1.8;
 			shaderLightingPassShader.SetFloat("lights[" + std::to_string(i) + "].Linear", linear);
@@ -200,7 +200,7 @@ public:
 		glBindTexture(GL_TEXTURE_2D, gAbedoSpec);
 #endif // Shader_debug
 		glEnable(GL_DEPTH_TEST);
-		renderQuad();
+		Geometry::renderQuad();
 
 		glBindFramebuffer(GL_READ_FRAMEBUFFER, gBuffer);
 		glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0); //绑定到主FBO中
@@ -227,33 +227,5 @@ public:
 		ImGui::End();
 	}
 
-	unsigned int quadVAO = 0;
-	unsigned int quadVBO;
-	void renderQuad()
-	{
-		if (quadVAO == 0)
-		{
-			float quadVertices[] = {
-				// positions        // texture Coords
-				-1.0f,  1.0f, 0.0f, 0.0f, 1.0f,
-				-1.0f, -1.0f, 0.0f, 0.0f, 0.0f,
-				1.0f,  1.0f, 0.0f, 1.0f, 1.0f,
-				1.0f, -1.0f, 0.0f, 1.0f, 0.0f,
-			};
-			// setup plane VAO
-			glGenVertexArrays(1, &quadVAO);
-			glGenBuffers(1, &quadVBO);
-			glBindVertexArray(quadVAO);
-			glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
-			glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
-			glEnableVertexAttribArray(0);
-			glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-			glEnableVertexAttribArray(1);
-			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-		}
-		glBindVertexArray(quadVAO);
-
-		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-		glBindVertexArray(0);
-	}
+	
 };

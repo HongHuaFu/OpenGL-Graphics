@@ -1,8 +1,5 @@
 #include "Texture.h"
-#include "../third-party/stb_image.h"
-#include <iostream>
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
+#include <random>
 
 unsigned int TextureFuncs::LoadTexture(const char* path)
 {
@@ -80,3 +77,4 @@ unsigned int TextureFuncs::LoadCubemap(std::vector<std::string> faces)
 
 	return textureID;
 }
+

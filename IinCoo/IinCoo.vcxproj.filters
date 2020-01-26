@@ -63,6 +63,15 @@
     <ClCompile Include="engine\Texture.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="engine\PostEffect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\FrameBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="engine\Geometry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="third-party\imgui\imconfig.h">
@@ -129,6 +138,24 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="demos\Test_03_DefferedShading.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="demos\Test_04_SSAO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\PostEffect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="demos\Test_05_Bloom.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\MathHelper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\FrameBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="engine\Geometry.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
