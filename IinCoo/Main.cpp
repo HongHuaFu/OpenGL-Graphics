@@ -1,5 +1,5 @@
 #include "demos/Test.h"
-#define Test_04
+#define Test_05
 
 int main()
 {
@@ -20,6 +20,11 @@ int main()
 
 #ifdef Test_04
 	Test_04_SSAO demo = Test_04_SSAO();
+	demo.Run();
+#endif // Test_04
+
+#ifdef Test_05
+	Test_05_Bloom demo = Test_05_Bloom();
 	demo.Run();
 #endif // Test_04
 
