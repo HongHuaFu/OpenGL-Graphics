@@ -158,5 +158,8 @@
     <ClInclude Include="engine\Geometry.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="demos\Test_06_NormalMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

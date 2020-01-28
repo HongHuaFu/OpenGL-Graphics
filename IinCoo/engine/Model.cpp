@@ -7,7 +7,7 @@
 void Model::LoadModel(std::string const & path)
 {                                                                                                                                                           
 	Assimp::Importer import;
-	const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs);    
+	const aiScene *scene = import.ReadFile(path, aiProcess_Triangulate | aiProcess_FlipUVs |aiProcess_CalcTangentSpace);    
 
 	if(!scene || scene->mFlags & AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode) 
 	{
@@ -66,9 +66,9 @@ Mesh Model::processMesh(aiMesh * mesh,const aiScene * scene)
 
 		
 		// tangent
-		vector.x =  0.0f; //mesh->mTangents[i].x;
-		vector.y = 0.0f; //mesh->mTangents[i].y;
-		vector.z = 0.0f; //mesh->mTangents[i].z;
+		vector.x =  mesh->mTangents[i].x;
+		vector.y = mesh->mTangents[i].y;
+		vector.z = mesh->mTangents[i].z;
 		vertex.Tangent = vector;
 		// bitangent
 		vector.x = 0.0f; //mesh->mBitangents[i].x;

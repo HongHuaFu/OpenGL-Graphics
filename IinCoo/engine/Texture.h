@@ -11,6 +11,6 @@ namespace TextureFuncs
 {
 	unsigned int LoadTexture(const char* path);
 	unsigned int LoadCubemap(std::vector<std::string> faces);
-	
+	void LoadTexture(const char* path,unsigned int* id);
 }
 

@@ -26,3 +26,11 @@
 
 ![image](screenshot/07-ssao.gif)
 
+### [08- Bloom]()
+
+![image](screenshot/08-Bloom.gif)
+
+### [09- Normal && AO]()
+
+![image](screenshot/09-NormalMap.gif)
+

@@ -5,3 +5,4 @@
 #include "../engine/Model.h"
 #include "../engine/MathHelper.h"
 #include "../engine/Geometry.h"
+#include "../engine/Texture.h"
