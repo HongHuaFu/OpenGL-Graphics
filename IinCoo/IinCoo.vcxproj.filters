@@ -72,6 +72,60 @@
     <ClCompile Include="engine\Geometry.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="2d-engine\Application.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Camera2D.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\CameraController.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Compiler.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Event.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\GLContext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\imgui.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Input.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Layer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\RenderCommand.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Renderer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Shader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\ShaderBuffer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Texture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\UILayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\VertexArray.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2d-engine\Window.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="third-party\imgui\imconfig.h">
@@ -159,6 +213,75 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="demos\Test_06_NormalMap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="demos\Test_07_3DClickPick.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Test_Enigne2d.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Application.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Camera2D.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\CameraController.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Engine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Event.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\EventSubs.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\GLContext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\imconfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\imgui.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Input.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Layer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\RenderCommand.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Renderer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Shader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\ShaderBuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Texture.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Timer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\UILayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\VertexArray.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2d-engine\Window.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

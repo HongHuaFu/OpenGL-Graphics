@@ -1,0 +1,17 @@
+#pragma once
+#include "2d-engine/Engine.h"
+
+void Test_Logger()
+{
+	LOG_TRACE<<"TRACE TEST.";
+	LOG_ERROR<<"ERROR TEST.";
+	LOG_INFO<<"INFO TEST.";
+	LOG_INFO<<"INFO TEST.";
+	LOG_INFO<<"INFO TEST.";
+	LOG_WARN<<"WARN TEST.";
+	LOG_TRACE<<"TRACE TEST.";
+	LOG_TRACE<<"TRACE TEST.";
+	LOG_ERROR<<"ERROR TEST.";
+	LOG_INFO<<"INFO TEST.";
+	LOG_TRACE<<"TRACE TEST.";
+}

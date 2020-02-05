@@ -146,6 +146,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="2d-engine\Application.cpp" />
+    <ClCompile Include="2d-engine\Camera2D.cpp" />
+    <ClCompile Include="2d-engine\CameraController.cpp" />
+    <ClCompile Include="2d-engine\Compiler.cpp" />
+    <ClCompile Include="2d-engine\Event.cpp" />
+    <ClCompile Include="2d-engine\GLContext.cpp" />
+    <ClCompile Include="2d-engine\imgui.cpp" />
+    <ClCompile Include="2d-engine\Input.cpp" />
+    <ClCompile Include="2d-engine\Layer.cpp" />
+    <ClCompile Include="2d-engine\Log.cpp" />
+    <ClCompile Include="2d-engine\RenderCommand.cpp" />
+    <ClCompile Include="2d-engine\Renderer.cpp" />
+    <ClCompile Include="2d-engine\Shader.cpp" />
+    <ClCompile Include="2d-engine\ShaderBuffer.cpp" />
+    <ClCompile Include="2d-engine\Texture.cpp" />
+    <ClCompile Include="2d-engine\UILayer.cpp" />
+    <ClCompile Include="2d-engine\VertexArray.cpp" />
+    <ClCompile Include="2d-engine\Window.cpp" />
     <ClCompile Include="engine\Camera.cpp" />
     <ClCompile Include="engine\Application.cpp" />
     <ClCompile Include="engine\FrameBuffer.cpp" />
@@ -167,6 +185,28 @@
     <ClCompile Include="third-party\compile.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="2d-engine\Application.h" />
+    <ClInclude Include="2d-engine\Camera2D.h" />
+    <ClInclude Include="2d-engine\CameraController.h" />
+    <ClInclude Include="2d-engine\Engine.h" />
+    <ClInclude Include="2d-engine\Event.h" />
+    <ClInclude Include="2d-engine\EventSubs.h" />
+    <ClInclude Include="2d-engine\GLContext.h" />
+    <ClInclude Include="2d-engine\imconfig.h" />
+    <ClInclude Include="2d-engine\imgui.h" />
+    <ClInclude Include="2d-engine\Input.h" />
+    <ClInclude Include="2d-engine\Layer.h" />
+    <ClInclude Include="2d-engine\Log.h" />
+    <ClInclude Include="2d-engine\RenderCommand.h" />
+    <ClInclude Include="2d-engine\Renderer.h" />
+    <ClInclude Include="2d-engine\Shader.h" />
+    <ClInclude Include="2d-engine\ShaderBuffer.h" />
+    <ClInclude Include="2d-engine\Texture.h" />
+    <ClInclude Include="2d-engine\Timer.h" />
+    <ClInclude Include="2d-engine\UILayer.h" />
+    <ClInclude Include="2d-engine\VertexArray.h" />
+    <ClInclude Include="2d-engine\Window.h" />
+    <ClInclude Include="Test_Enigne2d.h" />
     <ClInclude Include="demos\api.h" />
     <ClInclude Include="demos\Test.h" />
     <ClInclude Include="demos\Test_01_SkyBox.h" />
@@ -175,6 +215,7 @@
     <ClInclude Include="demos\Test_04_SSAO.h" />
     <ClInclude Include="demos\Test_05_Bloom.h" />
     <ClInclude Include="demos\Test_06_NormalMap.h" />
+    <ClInclude Include="demos\Test_07_3DClickPick.h" />
     <ClInclude Include="engine\Camera.h" />
     <ClInclude Include="engine\Application.h" />
     <ClInclude Include="engine\FrameBuffer.h" />

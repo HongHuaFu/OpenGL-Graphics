@@ -1,6 +1,6 @@
+#ifdef demos_test
 #include "demos/Test.h"
-#define Test_06
-
+#define Test_07
 int main()
 {
 #ifdef Test_01
@@ -32,5 +32,25 @@ int main()
 	Test_06_NormalMap demo = Test_06_NormalMap();
 	demo.Run();
 #endif // Test_06
+
+#ifdef Test_07
+	Test_07_3DClickPick demo = Test_07_3DClickPick();
+	demo.Run();
+#endif // Test_07
+
+
 }
 
+#endif
+
+#define _2dgameenignetest
+#ifdef _2dgameenignetest
+#include "Test_Enigne2d.h"
+
+
+int main()
+{
+	Test_Logger();
+	system("pause");
+}
+#endif // _2dgameenignetest
