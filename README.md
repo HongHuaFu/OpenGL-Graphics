@@ -39,14 +39,13 @@
 ![image](screenshot/PBR.png)
 
 
-
 一些PBR资料：
 
 **概念**：
 
 - [Physically Based Rendering](http://www.codinglabs.net/article_physically_based_rendering.aspx)
 
-- [Learn OpenGL](https://learnopengl-cn.github.io/07 PBR/01 Theory/)
+- [Learn OpenGL](https://learnopengl-cn.github.io)
 
 - [PBRT-E5.4-辐射学（Radiometry）](https://zhuanlan.zhihu.com/p/56020885)
 
@@ -62,7 +61,7 @@
 
   **实现**：
 
-- [Learn OpenGL](https://learnopengl-cn.github.io/07 PBR/01 Theory/)
+- [Learn OpenGL](https://learnopengl-cn.github.io)
 
 - https://github.com/JoshuaSenouf/gl-engine
 
