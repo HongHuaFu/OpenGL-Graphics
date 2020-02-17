@@ -34,3 +34,49 @@
 
 ![image](screenshot/09-NormalMap.gif)
 
+### [10- PBR]()
+
+![image](screenshot/PBR.png)
+
+
+
+一些PBR资料：
+
+**概念**：
+
+- [Physically Based Rendering](http://www.codinglabs.net/article_physically_based_rendering.aspx)
+
+- [Learn OpenGL](https://learnopengl-cn.github.io/07 PBR/01 Theory/)
+
+- [PBRT-E5.4-辐射学（Radiometry）](https://zhuanlan.zhihu.com/p/56020885)
+
+- [brdf为什么要定义为一个单位是sr-1的量？](https://www.zhihu.com/question/28476602)
+
+- [基于物理着色：BRDF](https://zhuanlan.zhihu.com/p/21376124)
+
+- [基于物理的渲染（PBR）白皮书](https://zhuanlan.zhihu.com/p/53086060)
+
+- [THE PBR GUIDE](https://academy.substance3d.com/courses/the-pbr-guide-part-1)
+
+  
+
+  **实现**：
+
+- [Learn OpenGL](https://learnopengl-cn.github.io/07 PBR/01 Theory/)
+
+- https://github.com/JoshuaSenouf/gl-engine
+
+- https://github.com/Angelo1211/HybridRenderingEngine
+
+- https://github.com/Nadrin/PBR
+
+  
+
+**数学**：
+
+- [如何通俗易懂地解释卷积？](https://www.zhihu.com/question/22298352)
+- [如何通俗地理解卷积？](https://www.matongxue.com/madocs/32/)
+- [计算机图形学的光学基础&BRDF公式的推导](https://www.bilibili.com/read/cv548776/)
+
+
+

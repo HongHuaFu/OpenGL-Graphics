@@ -78,6 +78,8 @@ unsigned int TextureFuncs::LoadCubemap(std::vector<std::string> faces)
 	return textureID;
 }
 
+
+ 
 void TextureFuncs::LoadTexture(const char * path,unsigned int * id)
 
 {

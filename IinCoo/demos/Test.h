@@ -6,3 +6,4 @@
 #include "Test_05_Bloom.h"
 #include "Test_06_NormalMap.h"
 #include "Test_07_3DClickPick.h"
+#include "Test_PBR.h"

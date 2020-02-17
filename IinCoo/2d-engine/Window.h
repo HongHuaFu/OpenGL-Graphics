@@ -29,8 +29,8 @@ namespace Engine
 		void OnUpdate();
 
 	public://getter and setter
-		unsigned int GetWindowWidth() const{ }
-		unsigned int GetWindowHeight() const { }
+		unsigned int GetWindowWidth() const{ return mWinData.width; }
+		unsigned int GetWindowHeight() const { return mWinData.height; }
 
 		void SetWindowVSync(bool);
 		bool GetWindowVSync() const;

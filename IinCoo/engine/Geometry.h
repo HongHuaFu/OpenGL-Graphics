@@ -8,4 +8,6 @@ namespace Geometry
 
 
 	void renderCube();
+
+	void renderSphere();
 }

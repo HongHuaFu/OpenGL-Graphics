@@ -1,6 +1,7 @@
+#define demos_test
 #ifdef demos_test
 #include "demos/Test.h"
-#define Test_07
+#define Test_08
 int main()
 {
 #ifdef Test_01
@@ -38,12 +39,17 @@ int main()
 	demo.Run();
 #endif // Test_07
 
+#ifdef Test_08
+	Test_PBR pbr = Test_PBR();
+	pbr.Run();
+#endif // Test_08
+
+
 
 }
 
 #endif
 
-#define _2dgameenignetest
 #ifdef _2dgameenignetest
 #include "Test_Enigne2d.h"
 
